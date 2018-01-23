@@ -258,7 +258,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/15/RESTful-web/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/22/Yii2.0-advance-swagger-doc/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Liao Lin">
@@ -277,7 +277,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/11/15/RESTful-web/" itemprop="url">Web中的无状态含义</a></h1>
+                <a class="post-title-link" href="/2018/01/22/Yii2.0-advance-swagger-doc/" itemprop="url">Yii Framework 2.0——集成swagger</a></h1>
         
 
         <div class="post-meta">
@@ -289,8 +289,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-15T18:23:00+08:00">
-                2017-11-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-22T10:56:00+08:00">
+                2018-01-22
               </time>
             
 
@@ -312,8 +312,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/PHP/" itemprop="url" rel="index">
-                    <span itemprop="name">PHP</span>
+                  <a href="/categories/Yii2-0/" itemprop="url" rel="index">
+                    <span itemprop="name">Yii2.0</span>
                   </a>
                 </span>
 
@@ -323,19 +323,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/PHP/RESTful-Web/" itemprop="url" rel="index">
-                    <span itemprop="name">RESTful Web</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/PHP/RESTful-Web/Web/" itemprop="url" rel="index">
-                    <span itemprop="name">Web</span>
+                  <a href="/categories/Yii2-0/Swagger/" itemprop="url" rel="index">
+                    <span itemprop="name">Swagger</span>
                   </a>
                 </span>
 
@@ -373,16 +362,186 @@
       
         
           
+          初步想法1.swagger-ui集成到view层；2.后台控制swagger-json；3.api版本控制（暂无合适的思路）。用产品思维设计API（三）——版本控制，没有你想的这么简单
+swagger搭建过程swagger主要分为两个部分，swagger-ui和swagger-php，ui用于展示，后者用于生成相关api。首先，在自己项目的合理位置上下载前端ui和生成的php。放在项目里面是为了保证访问地址和咱们接口地址都在一起，不会是访问时产生跨域问题。
+swagger-ui
+swagger-php
+ui搭建
           
-本文转载自：博客园
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/22/Yii2.0-advance-swagger-doc/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
 
-REST架构设计是目前非常火热的概念，已经成为构建web服务时应该遵循的事实标准。REST约束中有一条很重要的规则是“无状态”，但“无状态”是个很抽象的概念，对刚刚接触的人来讲，很难深刻形象的理解。今天在网上看了一篇文章，对于“无状态”的解释感觉很容易让人理解，特把文章中相关内容整理了下。
-“状态”的概念是什么一个Web应用程序协议的“状态”在通常指的是为两个相互关联的用户交互操作保留的某种公共信息，它们常常被用来存储工作流或用户状态信息等数据。这些信息可以被指定不同的作用域如page，request，session或全局作用域，而存储他们的责任也同样可以由Client端或Server端负责。
-服务调用过程中有两种“状态”：应用状态(Application State)和资源状态(Resource State)。应用状态指的是与某一特定请求相关的状态信息，而资源状态则反映了某一存储在服务器端资源在某一时刻的特定状态，该状态不会因为用户请求而改变，任何用户在同一时刻对该资源的请求都会获得这一状态的表现（Representation）。RESTful架构要求服务器端
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/18/sbdoc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liao Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wooLiaoLin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/18/sbdoc/" itemprop="url">sbdoc</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-18T10:33:00+08:00">
+                2018-01-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/sbdoc/" itemprop="url" rel="index">
+                    <span itemprop="name">sbdoc</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/sbdoc/api接口/" itemprop="url" rel="index">
+                    <span itemprop="name">api接口</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          安装 node…
+安装 MongoDBUbuntu16.04安装mongodb
+12345启动、重启和关闭命令:sudo service mongod startsudo service mongod restartsudo service mongod stop
+部署DOClever将DOClever的源码down到本地，在命令行下运行node DOClever的根目录/Server/bin/www；
+API接口约定汇总API多版本控制约定
+版本展现形式：”/api/v3/“，清晰直观。
+版本应该有数量控制，过期期限设定。
+对外发布的APP应该有统一的配置中心来管理Api版本。
+
+API文档管理工具推荐
+sbdoc 统一使用 http://192.168.10.10:20000/html/web/controller/console/console.html
+
+API返回值格式12345678&#123;		http_code: 200, // 3位int, http 状态码,rpc 不需要返回。    status: 0, // 返回状态 0表示正常, 非0 (0x10000001
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/11/15/RESTful-web/#more" rel="contents">
+            <a class="btn" href="/2018/01/18/sbdoc/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -433,7 +592,7 @@ REST架构设计是目前非常火热的概念，已经成为构建web服务时�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/15/PHP-ArrayAccess/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/16/区块链/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Liao Lin">
@@ -452,7 +611,7 @@ REST架构设计是目前非常火热的概念，已经成为构建web服务时�
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/11/15/PHP-ArrayAccess/" itemprop="url">PHP预定义接口之 ArrayAccess</a></h1>
+                <a class="post-title-link" href="/2018/01/16/区块链/" itemprop="url">区块链</a></h1>
         
 
         <div class="post-meta">
@@ -464,8 +623,8 @@ REST架构设计是目前非常火热的概念，已经成为构建web服务时�
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-15T00:00:00+08:00">
-                2017-11-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-16T15:26:00+08:00">
+                2018-01-16
               </time>
             
 
@@ -487,8 +646,162 @@ REST架构设计是目前非常火热的概念，已经成为构建web服务时�
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/PHP/" itemprop="url" rel="index">
-                    <span itemprop="name">PHP</span>
+                  <a href="/categories/区块链/" itemprop="url" rel="index">
+                    <span itemprop="name">区块链</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          composer 安装Yii2.0
+
+别人在忙挖矿，阿里工程师却悄悄用区块链搞了件大事！
+
+
+
+
+          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/16/区块链/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/16/Yii2.0-advance/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liao Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wooLiaoLin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/16/Yii2.0-advance/" itemprop="url">Yii Framework 2.0使用步骤</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-16T13:52:00+08:00">
+                2018-01-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Yii/" itemprop="url" rel="index">
+                    <span itemprop="name">Yii</span>
                   </a>
                 </span>
 
@@ -498,8 +811,8 @@ REST架构设计是目前非常火热的概念，已经成为构建web服务时�
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/PHP/ArrayAccess/" itemprop="url" rel="index">
-                    <span itemprop="name">ArrayAccess</span>
+                  <a href="/categories/Yii/Yii2-0/" itemprop="url" rel="index">
+                    <span itemprop="name">Yii2.0</span>
                   </a>
                 </span>
 
@@ -537,461 +850,14 @@ REST架构设计是目前非常火热的概念，已经成为构建web服务时�
       
         
           
-          ArrayAccessArrayAccess（数组式访问）接口
-简介ArrayAccess是在PHP5后(PHP 5 &gt;= 5.0.0, PHP 7)才有的接口。提供像访问数组一样访问对象的能力的接口。
-接口摘要1234567ArrayAccess &#123;	/* 方法 */	abstract public boolean offsetExists ( mixed $offset ); //检查偏移位置是否存在	abstract public mixed offsetGet ( mixed $offset ); //获取一个偏移位置的值	abstract public void offsetSet ( mixed $offset , mixed $value ); //设置一个偏移位置的值	abstract public void offsetUnset ( mixed $offset ); //复位一个偏移位置的值&#125;
-
-PHP预定义接口之 ArrayAccess
-
-
-          
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/11/15/PHP-ArrayAccess/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/07/Σ/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Liao Lin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wooLiaoLin">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/07/Σ/" itemprop="url">希腊字母Σ</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-07T00:00:00+08:00">
-                2017-11-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Σ/" itemprop="url" rel="index">
-                    <span itemprop="name">Σ</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Σ/希腊字母/" itemprop="url" rel="index">
-                    <span itemprop="name">希腊字母</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          
-数学符号 ∫ ∮ ∝ ∞ ∧ ∨ ∑ ∏ ∪ ∩ ∈ ∵ ∴ ⊥ ∥ ∠ ⌒ ⊙ ≌ ∽ √ ± ＋ － × ÷ ／ ≈ ≡ ≠ ＝ ≤ ≥ ＜ ＞ ≮ ≯ ∷
-
-Sigma（大写Σ，小写σ，中文音译：西格马），是第十八个希腊字母。在希腊语中，如果一个单字的最末一个字母是小写sigma，要把该字母写成 &#962;，此字母又称final sigma（Unicode: U+03C2）。其在现代的希腊数字代表6。
-∫ ∮ ∝ ∞ ∧ ∨ ∑ ∏ ∪ ∩ ∈ ∵ ∴ ⊥ ∥ ∠ ⌒ ⊙ ≌ ∽ √ ± ＋ － × ÷ ／ ≈ ≡ ≠ ＝ ≤ ≥ ＜ ＞ ≮ ≯ ∷
-
-          
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/11/07/Σ/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/05/Operational-Research/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Liao Lin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wooLiaoLin">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/05/Operational-Research/" itemprop="url">运筹学基础</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-05T00:00:00+08:00">
-                2017-11-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          第1章 导论1.考核目标和具体要求
-1.1 运筹学与管理决策1.2 计算机与运筹学1.3 决策方法分类
-
-          
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/11/05/Operational-Research/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/31/wx-xiaochengxu/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Liao Lin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wooLiaoLin">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/31/wx-xiaochengxu/" itemprop="url">微信小程序,简易教程</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-31T00:00:00+08:00">
-                2017-10-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/微信小程序/" itemprop="url" rel="index">
-                    <span itemprop="name">微信小程序</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          小程序简易教程创建页面每一个小程序页面是由同路径下同名的四个不同后缀文件的组成，如：index.js、index.wxml、index.wxss、index.json。.js后缀的文件是脚本文件，.json后缀的文件是配置文件，.wxss后缀的是样式表文件，.wxml后缀的文件是页面结构文件。
-
-常用标签 &lt;view/&gt;、&lt;image/&gt;、&lt;text/&gt; 、&lt;block/&gt;
-
-index.wxml 是页面的结构文件：12345678910111213&lt;!--index.wxml--&gt;&lt;view class=&quot;container&quot;&gt;  &lt;view class=&quot;userinfo&quot;&gt;    &lt;block wx:if=&quot;&#123;&#123;hasUserInfo&#125;&#125;&quot;&gt;      &lt;image bindtap=&quot;bindViewTap&quot; class=&quot;userinfo-avata
+          composer 安装Yii2.012345678910111213141516./init 初始化应用；环境配置添加API应用api配置安装 AdminLTE Asset Bundle多数据库配置用户登录机制创建yii2的rbac数据表    yii migrate --migrationPath=@yii/rbac/migrations/
+添加API应用RESTful Web Service APIsYii2.0连接多个数据库yii2-adminlte-asset配置主题多数据库配置用户登录机制疑问12341.如何定义应用的访问路由；2.render模板如何渲染视图；3.数据库配置；4.ACF是什么；
+ACF设置权限控制访问1234567ACF是一种通过yii\filters\AccessControl类来实现的简单授权.有两种角色 	？：未经认证的游客用户　　　　@：已认证的用户ACF可通过对角色设置权限控制访问
+ACF其他规则12345678910111213ips：浏览器的IP地址 可使用通配符*，为空则匹配所有用户verbs：匹配请求方式（GET，POST）matchCal
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/10/31/wx-xiaochengxu/#more" rel="contents">
+            <a class="btn" href="/2018/01/16/Yii2.0-advance/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1042,7 +908,7 @@ index.wxml 是页面的结构文件：12345678910111213&lt;!--index.wxml--&gt;&l
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/24/php-laravel5.1-collection/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/12/android-heart/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Liao Lin">
@@ -1061,7 +927,7 @@ index.wxml 是页面的结构文件：12345678910111213&lt;!--index.wxml--&gt;&l
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/24/php-laravel5.1-collection/" itemprop="url">Laravel 5.1 服务 —— 集合</a></h1>
+                <a class="post-title-link" href="/2018/01/12/android-heart/" itemprop="url">Android微信智能心跳方案</a></h1>
         
 
         <div class="post-meta">
@@ -1073,8 +939,8 @@ index.wxml 是页面的结构文件：12345678910111213&lt;!--index.wxml--&gt;&l
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-24T00:00:00+08:00">
-                2017-10-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-12T10:42:00+08:00">
+                2018-01-12
               </time>
             
 
@@ -1096,8 +962,8 @@ index.wxml 是页面的结构文件：12345678910111213&lt;!--index.wxml--&gt;&l
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/PHP/" itemprop="url" rel="index">
-                    <span itemprop="name">PHP</span>
+                  <a href="/categories/心跳方案/" itemprop="url" rel="index">
+                    <span itemprop="name">心跳方案</span>
                   </a>
                 </span>
 
@@ -1107,162 +973,8 @@ index.wxml 是页面的结构文件：12345678910111213&lt;!--index.wxml--&gt;&l
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/PHP/Laravel5-1/" itemprop="url" rel="index">
-                    <span itemprop="name">Laravel5.1</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          简介Illuminate\Support\Collection类为处理数组数据提供了平滑、方便的封装。例如，查看下面的代码，我们使用帮助函数collect创建一个新的集合实例，为每一个元素运行strtoupper函数，然后移除所有空元素
-$collection = collect([&apos;taylor&apos;, &apos;abigail&apos;, null])-&gt;map(function ($name) {
-    return strtoupper($name);
-})-&gt;reject(function ($name) {
-    return empty($name);
-});
-
-          
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/10/24/php-laravel5.1-collection/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/18/php-doc-pdf-2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Liao Lin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wooLiaoLin">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/18/php-doc-pdf-2/" itemprop="url">PHP office文档预览 《OpenOffice篇》</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-18T00:00:00+08:00">
-                2017-10-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/PHP/" itemprop="url" rel="index">
-                    <span itemprop="name">PHP</span>
+                  <a href="/categories/心跳方案/WhatsApp/" itemprop="url" rel="index">
+                    <span itemprop="name">WhatsApp</span>
                   </a>
                 </span>
 
@@ -1272,8 +984,8 @@ $collection = collect([&apos;taylor&apos;, &apos;abigail&apos;, null])-&gt;map(f
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/PHP/openoffice/" itemprop="url" rel="index">
-                    <span itemprop="name">openoffice</span>
+                  <a href="/categories/心跳方案/WhatsApp/Line/" itemprop="url" rel="index">
+                    <span itemprop="name">Line</span>
                   </a>
                 </span>
 
@@ -1283,333 +995,8 @@ $collection = collect([&apos;taylor&apos;, &apos;abigail&apos;, null])-&gt;map(f
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/PHP/openoffice/jodconverter/" itemprop="url" rel="index">
-                    <span itemprop="name">jodconverter</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          php + openoffice + jodconverter 实现word转pdf
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/10/18/php-doc-pdf-2/">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/16/php-doc-pdf/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Liao Lin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wooLiaoLin">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/16/php-doc-pdf/" itemprop="url">PHP——文档预览功能</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-16T00:00:00+08:00">
-                2017-10-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/PHP/" itemprop="url" rel="index">
-                    <span itemprop="name">PHP</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/PHP/openoffice/" itemprop="url" rel="index">
-                    <span itemprop="name">openoffice</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          office文档在线预览 openoffice 、Office Web 365 在线预览、Word Online 在线预览
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/10/16/php-doc-pdf/">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/14/RESTful-api/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Liao Lin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wooLiaoLin">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/14/RESTful-api/" itemprop="url">RESTful API 设计最佳实践</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-14T00:00:00+08:00">
-                2017-10-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/php/" itemprop="url" rel="index">
-                    <span itemprop="name">php</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/php/PHP/" itemprop="url" rel="index">
-                    <span itemprop="name">PHP</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/php/PHP/RESTful-API/" itemprop="url" rel="index">
-                    <span itemprop="name">RESTful API</span>
+                  <a href="/categories/心跳方案/WhatsApp/Line/信令通道/" itemprop="url" rel="index">
+                    <span itemprop="name">信令通道</span>
                   </a>
                 </span>
 
@@ -1648,16 +1035,20 @@ $collection = collect([&apos;taylor&apos;, &apos;abigail&apos;, null])-&gt;map(f
         
           
           
-本文转载自：众成翻译译者：slane链接：http://www.zcfy.cc/article/4388原文：https://blog.philipphauer.de/restful-api-design-best-practices
-原文：RESTful API Design. Best Practices in a Nutshell.作者：Philipp Hauer
 
-项目资源的URL应该如何设计？用名词复数还是用名词单数？一个资源需要多少个URL？用哪种HTTP方法来创建一个新的资源？可选参数应该放在哪里？那些不涉及资源操作的URL呢？实现分页和版本控制的最好方法是什么？因为有太多的疑问，设计RESTful API变得很棘手。在这篇文章中，我们来看一下RESTful API设计，并给出一个最佳实践方案。
-每个资源使用两个URL资源集合用一个URL，具体某个资源用一个URL：12/employees         #资源集合的URL/employees/56      #具体某个资源的URL
-用名词代替动词表示资源这让你的API更简洁，URL数目更少。不要这么设计：1234/g
+Android微信智能心跳方案
+
+
+
+安卓推送方式app开个Service，GCM google play推送，定制机没有google play的用xmpp服务器。各有各的好处，service 稳定但费电，gcm 不占多余资源但常常会被墙，xmpp 也稳定但是需要自己部署服务器。
+GCM并不是所有的消息推送，只利用GCM来激活微信，不传递消息的具体数据。
+摘要123456789101112WhatsAppLine影响TCP连接寿命心跳间隔网络类型GCM作为辅助通道增加新消息通知的可靠性WhatsApp、Line、微信的Push策略分析信令通道NAT超时时间保活信令TCP连接DHCP第三发方案友盟、极光、信鸽
+WhatsApp、Line、微信的Push策略分析WhatsApp在不支持GCM的设备上，采用和微信类似的长连接+心跳策略，WIFI和手机网络下的心跳间隔都为4分45秒，心跳5次后，主动断开连接再重连。
+在支持GCM的设备上，主要靠GCM来激活WhatsApp，WhatsApp启动后，会建立一个与服务器的长连接，直接通过此长连接发送Push消息，这个长连接10分钟无消息就会主动
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/10/14/RESTful-api/#more" rel="contents">
+            <a class="btn" href="/2018/01/12/android-heart/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1708,7 +1099,7 @@ $collection = collect([&apos;taylor&apos;, &apos;abigail&apos;, null])-&gt;map(f
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/12/virtualBox-oleaut32-error/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/08/ocr-jiashizheng/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Liao Lin">
@@ -1727,7 +1118,7 @@ $collection = collect([&apos;taylor&apos;, &apos;abigail&apos;, null])-&gt;map(f
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/12/virtualBox-oleaut32-error/" itemprop="url">PSDispatch looks broken by some installer featuring the broken oleaut32.msm module as a component.</a></h1>
+                <a class="post-title-link" href="/2018/01/08/ocr-jiashizheng/" itemprop="url">行驶证照片——文字信息识别</a></h1>
         
 
         <div class="post-meta">
@@ -1739,8 +1130,8 @@ $collection = collect([&apos;taylor&apos;, &apos;abigail&apos;, null])-&gt;map(f
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-12T15:54:03+08:00">
-                2017-10-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-08T09:51:00+08:00">
+                2018-01-08
               </time>
             
 
@@ -1749,6 +1140,39 @@ $collection = collect([&apos;taylor&apos;, &apos;abigail&apos;, null])-&gt;map(f
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CNN/" itemprop="url" rel="index">
+                    <span itemprop="name">CNN</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CNN/OCR/" itemprop="url" rel="index">
+                    <span itemprop="name">OCR</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -1779,17 +1203,689 @@ $collection = collect([&apos;taylor&apos;, &apos;abigail&apos;, null])-&gt;map(f
       
         
           
-          启动VirtualBox时报错
-PSDispatch looks broken by some installer featuring the broken oleaut32.msm module as a component.
-Failed to instantiate CLSID_VirtualBox w/ IVirtualBox, but CLSID_VirtualBox w/ IUnknown works.
+          目标：对行驶证图片进行文字识别，并提取出关键信息（如号码号牌、车辆类型、所有人等）。
+实现方案：    1.利用开源图片文字识别引擎，对图片进行识别；    2.对识别出来的文字就行分类处理，提取行驶证信息（如姓名、证件号码、地址等）；
+具体步骤：    1.挑选合适的ocr引擎；    2.训练识别库;    3.提取行驶证信息;
+难点：    1.ocr引擎算法开发【核心算法】；    2.训练识别库周期比较长，需要大量的测试数据；
+参考资料：    1.Tesseract-OCR识别中文与训练字库实例    
+实施阶段：
+1.下载并使用开源OCR引擎Tesseract，写一个测试demo；
 
-解决办法：1. win+r 快捷键打开 “运行”，输入regedit 打开注册表
-2. 找到 HKEY_CLASSES_ROOT\CLSID\{00020420-0000-0000-C000-000000000046} InprocServer32 修改 第一行（默认）的值为 C:\Windows\system32\oleaut32.dll
-3. 找到HKEY_CLASSES_ROOT\CLSID\{00020424-0000-0000-C000-000000000046} InprocServer32  修改 第一行（默认）的值为 C:\Windows\system32
+Ubantu 安装Tesseract。 参考
+ 【注意】需安装的依赖如下： autotools-dev, libleptonica-dev, autoconf, automake, libtool, libpng12-dev, libtiff5-dev, zlib1g-dev,  libicu-dev, autoconf-archive
+leptonica编译 12345678sudo ap
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/10/12/virtualBox-oleaut32-error/#more" rel="contents">
+            <a class="btn" href="/2018/01/08/ocr-jiashizheng/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/05/DeepCNN/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liao Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wooLiaoLin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/05/DeepCNN/" itemprop="url">Deep CNN 卷积神经网络</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-05T15:42:00+08:00">
+                2018-01-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CNN/" itemprop="url" rel="index">
+                    <span itemprop="name">CNN</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CNN/OCR/" itemprop="url" rel="index">
+                    <span itemprop="name">OCR</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          
+
+Deep Learning论文笔记之（四）CNN卷积神经网络推导和实现
+
+
+
+一文读懂卷积神经网络CNN
+
+
+
+人工智能玄乎其玄，内部究竟如何？带你一窥卷积神经网络内部
+
+
+
+Linux环境PHP基于Tesseract-OCR引擎识别图片内容教程
+
+
+
+Tesseract-OCR首先在页面 tesseract-ocr/tessdata下载tesseract-ocr安装包，或者在release页面找到相应的版本下载Leptonica Source Code
+Facebook的图像识别很强大，一次开源了三款机器视觉工具OpenCV实现车牌识别，OCR分割，ANN神经网络Python人工智能之图片识别，Python3一行代码实现图片文字识别证件识别
+
+翔云人工智能开放平台
+
+
+
+百度云文字识别
+
+
+
+知乎用户：128 人赞同了该回答文字检测算法近几年发展迅速，可以分为水平文字检测(四个自由度，类似物体检测)和倾斜文字检测(文字框是不规则四边形，八个自由度)，水平文字检测个人认为比较好的算法是2016 ECCV乔宇老师团队的CTPN，倾斜文字检测个人比较喜欢的方法是2017 CVPR的EA
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/05/DeepCNN/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/05/Bp/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liao Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wooLiaoLin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/05/Bp/" itemprop="url">back propagation 算法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-05T15:42:00+08:00">
+                2018-01-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/bp算法/" itemprop="url" rel="index">
+                    <span itemprop="name">bp算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          
+
+如何直观地解释 back propagation 算法？
+
+
+
+
+          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/05/Bp/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/02/php-swoole-helloword/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liao Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wooLiaoLin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/02/php-swoole-helloword/" itemprop="url">使用PHP+Swoole实现的网页即时聊天工具</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-02T15:42:00+08:00">
+                2018-01-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/PHP/Swoole/" itemprop="url" rel="index">
+                    <span itemprop="name">Swoole</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          全异步非阻塞Server，可以同时支持数百万TCP连接在线基于websocket+flash_websocket支持所有浏览器/客户端/移动端支持单聊/群聊/组聊等功能支持永久保存聊天记录，使用MySQL存储基于Server PUSH的即时内容更新，登录/登出/状态变更/消息等会内容即时更新用户列表和在线信息使用Redis存储支持发送连接/图片/语音/视频/文件（开发中）支持Web端直接管理所有在线用户和群组（开发中）
+WebSocketphp中使用websocket
+WebSocket协议是基于TCP的一种新的网络协议。它实现了浏览器与服务器全双工(full-duplex)通信——允许服务器主动发送信息给客户端。
+Comet基于 HTTP 长连接的“服务器推”技术
+Web端即时通讯技术盘点：短轮询、Comet、Websocket、SSEWeb端即时通讯技术盘点：短轮询、Comet、Websocket、SSE
+
+          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/02/php-swoole-helloword/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/25/Knuth–Morris–Pratt_algorithm/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liao Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wooLiaoLin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/25/Knuth–Morris–Pratt_algorithm/" itemprop="url">字符串匹配的KMP算法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-25T00:00:00+08:00">
+                2017-12-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法/KMP算法/" itemprop="url" rel="index">
+                    <span itemprop="name">KMP算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          字符串匹配的KMP算法
+阮一峰的网络日志——字符串匹配的KMP算法
+
+
+          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/12/25/Knuth–Morris–Pratt_algorithm/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1831,7 +1927,7 @@ Failed to instantiate CLSID_VirtualBox w/ IVirtualBox, but CLSID_VirtualBox w/ I
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1880,7 +1976,7 @@ Failed to instantiate CLSID_VirtualBox w/ IVirtualBox, but CLSID_VirtualBox w/ I
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-count">28</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1891,7 +1987,7 @@ Failed to instantiate CLSID_VirtualBox w/ IVirtualBox, but CLSID_VirtualBox w/ I
             
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">40</span>
                 <span class="site-state-item-name">分类</span>
               
             </div>
@@ -1964,7 +2060,7 @@ Failed to instantiate CLSID_VirtualBox w/ IVirtualBox, but CLSID_VirtualBox w/ I
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

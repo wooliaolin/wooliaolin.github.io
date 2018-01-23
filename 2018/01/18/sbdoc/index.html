@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="安装 node… 安装 MongoDBUbuntu16.04安装mongodb 12345启动、重启和关闭命令:sudo service mongod startsudo service mongod restartsudo service mongod stop 部署DOClever将DOClever的源码down到本地，在命令行下运行node DOClever的根目录/Server/bin/w">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sbdoc">
+<meta property="og:url" content="http://yoursite.com/2018/01/18/sbdoc/index.html">
+<meta property="og:site_name" content="wooLiaoLin">
+<meta property="og:description" content="安装 node… 安装 MongoDBUbuntu16.04安装mongodb 12345启动、重启和关闭命令:sudo service mongod startsudo service mongod restartsudo service mongod stop 部署DOClever将DOClever的源码down到本地，在命令行下运行node DOClever的根目录/Server/bin/w">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/img/0004.png">
+<meta property="og:image" content="http://yoursite.com/img/0005.png">
+<meta property="og:image" content="http://yoursite.com/img/0006.png">
+<meta property="og:updated_time" content="2018-01-18T06:31:24.119Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="sbdoc">
+<meta name="twitter:description" content="安装 node… 安装 MongoDBUbuntu16.04安装mongodb 12345启动、重启和关闭命令:sudo service mongod startsudo service mongod restartsudo service mongod stop 部署DOClever将DOClever的源码down到本地，在命令行下运行node DOClever的根目录/Server/bin/w">
+<meta name="twitter:image" content="http://yoursite.com/img/0004.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/01/18/sbdoc/"/>
+
+
+
+
+
+  <title>sbdoc | wooLiaoLin</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">wooLiaoLin</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/18/sbdoc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liao Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wooLiaoLin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">sbdoc</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-18T10:33:00+08:00">
+                2018-01-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/sbdoc/" itemprop="url" rel="index">
+                    <span itemprop="name">sbdoc</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/sbdoc/api接口/" itemprop="url" rel="index">
+                    <span itemprop="name">api接口</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="安装-node"><a href="#安装-node" class="headerlink" title="安装 node"></a>安装 node</h1><p>…</p>
+<h1 id="安装-MongoDB"><a href="#安装-MongoDB" class="headerlink" title="安装 MongoDB"></a>安装 MongoDB</h1><p><a href="http://blog.csdn.net/zhushh/article/details/52451441" target="_blank" rel="external">Ubuntu16.04安装mongodb</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">启动、重启和关闭命令:</div><div class="line"></div><div class="line">sudo service mongod start</div><div class="line">sudo service mongod restart</div><div class="line">sudo service mongod stop</div></pre></td></tr></table></figure>
+<h1 id="部署DOClever"><a href="#部署DOClever" class="headerlink" title="部署DOClever"></a>部署DOClever</h1><p>将DOClever的源码down到本地，在命令行下运行node DOClever的根目录/Server/bin/www；</p>
+<h3 id="API接口约定汇总"><a href="#API接口约定汇总" class="headerlink" title="API接口约定汇总"></a>API接口约定汇总</h3><h4 id="API多版本控制约定"><a href="#API多版本控制约定" class="headerlink" title="API多版本控制约定"></a>API多版本控制约定</h4><ul>
+<li>版本展现形式：”/api/v3/“，清晰直观。</li>
+<li>版本应该有数量控制，过期期限设定。</li>
+<li>对外发布的APP应该有统一的配置中心来管理Api版本。</li>
+</ul>
+<h4 id="API文档管理工具推荐"><a href="#API文档管理工具推荐" class="headerlink" title="API文档管理工具推荐"></a>API文档管理工具推荐</h4><blockquote>
+<p>sbdoc 统一使用 <a href="http://192.168.10.10:20000/html/web/controller/console/console.html" target="_blank" rel="external">http://192.168.10.10:20000/html/web/controller/console/console.html</a></p>
+</blockquote>
+<h4 id="API返回值格式"><a href="#API返回值格式" class="headerlink" title="API返回值格式"></a>API返回值格式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;	</div><div class="line">	http_code: 200, // 3位int, http 状态码,rpc 不需要返回。</div><div class="line">    status: 0, // 返回状态 0表示正常, 非0 (0x10000001|16进制int型)表示错误</div><div class="line">    info: &quot;&quot;,   // 错误信息, string类型</div><div class="line">    result: &#123; // 返回结果,没有结果可以为空</div><div class="line">   	</div><div class="line">   	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="DOClever简介"><a href="#DOClever简介" class="headerlink" title="DOClever简介"></a>DOClever简介</h1><p>DOClever 不仅集成了文档编写，团队协作，接口运行，mock 数据等功能，还有两个功能是让我们团队大大的提高工作效率的。一个是接口的自动化生成，可以根据接口数据自动生成文档信息，还有一个便是本文分享的重点，接口的自动化测试！ 传统的接口测试往往是接口一个个运行，观察返回数据是否显示正确，然后再用这个接口的出参手动的填入下一个接口的入参，这样的测试流程不仅很繁琐，效率低下，遇到业务场景比较复杂的很容易发生错误。所以我们需要一个自动化测试的解决方案，可以用最少的代价做最有效率的事情。 以 DOClever 为例，假设我们的工程有以下四个接口：</p>
+<p><img src="/img/0004.png" alt=""> </p>
+<h1 id="自动化测试"><a href="#自动化测试" class="headerlink" title="自动化测试"></a>自动化测试</h1><h2 id="业务场景一"><a href="#业务场景一" class="headerlink" title="业务场景一"></a>业务场景一</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">先登录，然后获取报名订单列表；</div></pre></td></tr></table></figure>
+<h3 id="一般流程"><a href="#一般流程" class="headerlink" title="一般流程"></a>一般流程</h3><p>登陆：获取图片验证码-&gt;输入验证码-&gt;登录；——接口之前的信息需要来回切换比较繁琐。</p>
+<h3 id="DOClever方式"><a href="#DOClever方式" class="headerlink" title="DOClever方式"></a>DOClever方式</h3><p>1.切换到测试栏目；<br>新建订单模块-&gt;新建订单列表测试业务-&gt;在订单列表下新建一个测试用例【就叫获取订单列表】如下图：<br><img src="/img/0005.png" alt=""> </p>
+<p>2.测试用例，DOClever 的测试用例用 javascript 编写即可，js 本身还是比较简单，学习一下很快就能上手。如下图：<br><img src="/img/0006.png" alt=""> </p>
+<p>代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">var a=获取验证码;</div><div class="line"></div><div class="line">var res=await a();</div><div class="line">var text=await input(&quot;aaa&quot;,res.data);</div><div class="line">log(text);</div><div class="line">a=登录;</div><div class="line">var res=await a(&#123;</div><div class="line">body:&#123;</div><div class="line">&quot;code&quot;:text</div><div class="line">&#125;</div><div class="line">&#125;); var c=报名订单列表;</div><div class="line">res=await c();</div><div class="line">log(res.data.code);</div><div class="line">return true;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/16/区块链/" rel="next" title="区块链">
+                <i class="fa fa-chevron-left"></i> 区块链
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/22/Yii2.0-advance-swagger-doc/" rel="prev" title="Yii Framework 2.0——集成swagger">
+                Yii Framework 2.0——集成swagger <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="/images/avatar.jpg"
+              alt="Liao Lin" />
+          
+            <p class="site-author-name" itemprop="name">Liao Lin</p>
+            <p class="site-description motion-element" itemprop="description">简简单单 口袋空空</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">28</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">40</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/wooliaolin" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>GitHub</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:wooliaolin@163.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Liao Lin</span>
+
+  
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Android微信智能心跳方案    安卓推送方式app开个Service，GCM google play推送，定制机没有google play的用xmpp服务器。各有各的好处，service 稳定但费电，gcm 不占多余资源但常常会被墙，xmpp 也稳定但是需要自己部署服务器。 GCM并不是所有的消息推送，只利用GCM来激活微信，不传递消息的具体数据。 摘要123456789101112Wh">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android微信智能心跳方案">
+<meta property="og:url" content="http://yoursite.com/2018/01/12/android-heart/index.html">
+<meta property="og:site_name" content="wooLiaoLin">
+<meta property="og:description" content="Android微信智能心跳方案    安卓推送方式app开个Service，GCM google play推送，定制机没有google play的用xmpp服务器。各有各的好处，service 稳定但费电，gcm 不占多余资源但常常会被墙，xmpp 也稳定但是需要自己部署服务器。 GCM并不是所有的消息推送，只利用GCM来激活微信，不传递消息的具体数据。 摘要123456789101112Wh">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/img/0001.png">
+<meta property="og:image" content="http://yoursite.com/img/0002.png">
+<meta property="og:image" content="http://yoursite.com/img/0003.png">
+<meta property="og:updated_time" content="2018-01-12T03:31:52.232Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android微信智能心跳方案">
+<meta name="twitter:description" content="Android微信智能心跳方案    安卓推送方式app开个Service，GCM google play推送，定制机没有google play的用xmpp服务器。各有各的好处，service 稳定但费电，gcm 不占多余资源但常常会被墙，xmpp 也稳定但是需要自己部署服务器。 GCM并不是所有的消息推送，只利用GCM来激活微信，不传递消息的具体数据。 摘要123456789101112Wh">
+<meta name="twitter:image" content="http://yoursite.com/img/0001.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/01/12/android-heart/"/>
+
+
+
+
+
+  <title>Android微信智能心跳方案 | wooLiaoLin</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">wooLiaoLin</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/12/android-heart/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liao Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wooLiaoLin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Android微信智能心跳方案</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-12T10:42:00+08:00">
+                2018-01-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/心跳方案/" itemprop="url" rel="index">
+                    <span itemprop="name">心跳方案</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/心跳方案/WhatsApp/" itemprop="url" rel="index">
+                    <span itemprop="name">WhatsApp</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/心跳方案/WhatsApp/Line/" itemprop="url" rel="index">
+                    <span itemprop="name">Line</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/心跳方案/WhatsApp/Line/信令通道/" itemprop="url" rel="index">
+                    <span itemprop="name">信令通道</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ul>
+<li><blockquote>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzAwNDY1ODY2OQ==&amp;mid=207243549&amp;idx=1&amp;sn=4ebe4beb8123f1b5ab58810ac8bc5994&amp;scene=0#rd" target="_blank" rel="external">Android微信智能心跳方案</a></p>
+</blockquote>
+</li>
+</ul>
+<h2 id="安卓推送方式"><a href="#安卓推送方式" class="headerlink" title="安卓推送方式"></a>安卓推送方式</h2><p>app开个Service，GCM google play推送，定制机没有google play的用xmpp服务器。各有各的好处，service 稳定但费电，gcm 不占多余资源但常常会被墙，xmpp 也稳定但是需要自己部署服务器。</p>
+<p>GCM并不是所有的消息推送，只利用GCM来激活微信，不传递消息的具体数据。</p>
+<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">WhatsApp</div><div class="line">Line</div><div class="line">影响TCP连接寿命</div><div class="line">心跳间隔</div><div class="line">网络类型</div><div class="line">GCM作为辅助通道增加新消息通知的可靠性</div><div class="line">WhatsApp、Line、微信的Push策略分析</div><div class="line">信令通道</div><div class="line">NAT超时时间</div><div class="line">保活信令TCP连接</div><div class="line">DHCP</div><div class="line">第三发方案友盟、极光、信鸽</div></pre></td></tr></table></figure>
+<h2 id="WhatsApp、Line、微信的Push策略分析"><a href="#WhatsApp、Line、微信的Push策略分析" class="headerlink" title="WhatsApp、Line、微信的Push策略分析"></a>WhatsApp、Line、微信的Push策略分析</h2><h2 id="WhatsApp"><a href="#WhatsApp" class="headerlink" title="WhatsApp"></a>WhatsApp</h2><p>在不支持GCM的设备上，采用和微信类似的长连接+心跳策略，WIFI和手机网络下的心跳间隔都为4分45秒，心跳5次后，主动断开连接再重连。</p>
+<p>在支持GCM的设备上，主要靠GCM来激活WhatsApp，WhatsApp启动后，会建立一个与服务器的长连接，直接通过此长连接发送Push消息，这个长连接10分钟无消息就会主动断掉，且这十分钟内不做心跳，断掉后WhatsApp客户端和它的服务器不再有连接。当有消息时候，服务器发现没有长连接会发送GCM消息，手机收到GCM消息后，会重新建立长连接来收取消息，10分钟无消息会再断开，如此循环。</p>
+<h2 id="Line"><a href="#Line" class="headerlink" title="Line"></a>Line</h2><p>从测试中发现Line在国内、台湾、美国使用了不同的策略。</p>
+<p>1、美国（使用GCM）：</p>
+<p>启动时，会保持7分钟心跳（CDMA2000网络）维持长连接半小时，之后主动断开长连接。当有消息时，服务器会发送GCM消息，Line客户端接收到GCM消息后，重新建立长连接，并再次用心跳维持半个小时。</p>
+<p>2、国内（不使用GCM）：</p>
+<p>在国内，同样帐号在相同网络，不同的手机上测出了两种策略：</p>
+<p>长连接+心跳策略（在Galaxy S3上使用），心跳间隔WIFI下是3分20秒，手机网络是7分钟。</p>
+<p>轮询策略（在红米和Nexus S上使用），如图2-1所示。与心跳策略的主要区别用红色标出，客户端在长连接建立后也会定时发送请求，Server会回复并且同时关闭长连接。客户端等待轮询间隔T1后再次建立TCP连接。Line会根据手机的活跃状态动态调整T1，调整范围是从最小1分到最大到2小时半。而长连接存活时间T2比较固定，在WIFI下4分钟，手机网络7分钟。如果在T2时收到新消息会延长T2的时间。</p>
+<p>3、台湾（不使用GCM）：</p>
+<p>从IBG同事win和guang提供的测试数据中看到，台湾使用的策略跟国内的轮询策略类似。</p>
+<h2 id="微信"><a href="#微信" class="headerlink" title="微信"></a>微信</h2><p>微信没有使用GCM，自己维护TCP长连接，使用固定心跳。</p>
+<h2 id="心跳典型值"><a href="#心跳典型值" class="headerlink" title="心跳典型值"></a>心跳典型值</h2><p><img src="/img/0001.png" alt=""></p>
+<h2 id="Line、WhatsApp、微信Push策略的优点"><a href="#Line、WhatsApp、微信Push策略的优点" class="headerlink" title="Line、WhatsApp、微信Push策略的优点"></a>Line、WhatsApp、微信Push策略的优点</h2><p>a）微信：当前心跳间隔比竞品短，所以微信在新消息提醒上会最及时。</p>
+<p>b）使用GCM：Line和WhatsApp使用GCM策略的最大优点就是省电，以及减轻系统负荷（减少后台应用数目）。</p>
+<p>c）Line：Line的轮询策略，优点是当Line处于活跃状态时，及时收消息。当Line处于不活跃状态时，省电。</p>
+<h2 id="Line、WhatsApp微信Push策略的不足"><a href="#Line、WhatsApp微信Push策略的不足" class="headerlink" title="Line、WhatsApp微信Push策略的不足"></a>Line、WhatsApp微信Push策略的不足</h2><p>a）微信当前心跳频率相对竞品较大，在耗电、耗流量，占用信令通道等方面有所影响。</p>
+<p>b）Line的轮询策略，导致的问题是消息可能会延迟接收，测试发现最大延迟间隔到2.5小时。</p>
+<p>c）WhatsApp和Line使用Push拉起一个定时长连接策略，缺点是要依赖Google的Push服务，如果Google的Push服务不稳定，消息也会延迟接收。</p>
+<p>d）在国内的移动和联通2G网络下，由于运营商的策略，GCM长连接频繁断连，WhatsApp的Push消息很不及时，体验非常差。</p>
+<h2 id="影响TCP连接寿命的因素"><a href="#影响TCP连接寿命的因素" class="headerlink" title="影响TCP连接寿命的因素"></a>影响TCP连接寿命的因素</h2><p>在Android下，不管是GCM，还是微信，都是通过TCP长连接来进行Push消息的，TCP长连接存活，消息Push就及时，所以要对影响TCP连接寿命的因素进行研究。</p>
+<p>1、NAT超时</p>
+<p>大部分移动无线网络运营商都在链路一段时间没有数据通讯时，会淘汰 NAT 表中的对应项，造成链路中断（NAT超时的更多描述见附录6.1）。NAT超时是影响TCP连接寿命的一个重要因素(尤其是国内)，所以客户端自动测算NAT超时时间，来动态调整心跳间隔，是一个重要的优化点。</p>
+<p>2、DHCP的租期（lease time）</p>
+<p>目前测试发现安卓系统对DHCP的处理有Bug，DHCP租期到了不会主动续约并且会继续使用过期IP，这个问题会造成TCP长连接偶然的断连。（租期问题的具体描述见附录6.2）。</p>
+<p>3、网络状态变化</p>
+<p>手机网络和WIFI网络切换、网络断开和连上等情况有网络状态的变化，也会使长连接变为无效连接，需要监听响应的网络状态变化事件，重新建立Push长连接。</p>
+<h2 id="心跳范围选择"><a href="#心跳范围选择" class="headerlink" title="心跳范围选择"></a>心跳范围选择</h2><p>1、前后台区分处理：</p>
+<p>为了保证微信收消息及时性的体验，当微信处于前台活跃状态时，使用固定心跳。</p>
+<p>微信进入后台（或者前台关屏）时，先用几次最小心跳维持长链接。然后进入后台自适应心跳计算。这样做的目的是尽量选择用户不活跃的时间段，来减少心跳计算可能产生的消息不及时收取影响。</p>
+<p>2、后台自适应心跳选择区间：</p>
+<p>可根据自身产品的特点选择合适的心跳范围。</p>
+<h2 id="状态转换图"><a href="#状态转换图" class="headerlink" title="状态转换图"></a>状态转换图</h2><p><img src="/img/0002.png" alt=""></p>
+<h2 id="自适应心跳算法描述"><a href="#自适应心跳算法描述" class="headerlink" title="自适应心跳算法描述"></a>自适应心跳算法描述</h2><p>1、按网络类型区分计算：</p>
+<p>因为每个网络的NAT时间可能不一致。所以需要区分计算，数据网络按subType做关键字，WIFI按WIFI名做关键字。</p>
+<p>对稳定的网络，因为NAT老化时间的存在，在自适应计算态的时候，暂设计以下步骤在当前心跳区间逼近出最大可用的心跳。</p>
+<p>a） 变量说明：</p>
+<p>[MinHeart，MaxHeart]——心跳可选区间。</p>
+<p>successHeart——当前成功心跳，初始为MinHeart</p>
+<p>curHeart——当前心跳初始值为successHeart</p>
+<p>heartStep——心跳增加步长</p>
+<p>successStep——稳定期后的探测步长</p>
+<p>b） 最大值探测步骤：<br><img src="/img/0003.png" alt=""></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/08/ocr-jiashizheng/" rel="next" title="行驶证照片——文字信息识别">
+                <i class="fa fa-chevron-left"></i> 行驶证照片——文字信息识别
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/16/Yii2.0-advance/" rel="prev" title="Yii Framework 2.0使用步骤">
+                Yii Framework 2.0使用步骤 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="/images/avatar.jpg"
+              alt="Liao Lin" />
+          
+            <p class="site-author-name" itemprop="name">Liao Lin</p>
+            <p class="site-description motion-element" itemprop="description">简简单单 口袋空空</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">28</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">40</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/wooliaolin" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>GitHub</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:wooliaolin@163.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Liao Lin</span>
+
+  
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
